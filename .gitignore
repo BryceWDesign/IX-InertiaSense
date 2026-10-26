@@ -1,0 +1,6 @@
+/build/
+/.pytest_cache/
+**/__pycache__/
+*.pyc
+/results/benchmark_ci.json
+/results/change_benchmark_ci.json

@@ -1,0 +1,24 @@
+{
+  "scope": "synthetic_quasistatic_payload_replacement",
+  "change_sample_index": 90,
+  "adaptive_tracker_threshold_N": 4.0,
+  "required_consecutive_mismatches": 5,
+  "results": [
+    {
+      "morphology": "compact_arm",
+      "trials": 20,
+      "missed_or_premature_events": 0,
+      "median_samples_until_detection": 4.0,
+      "median_final_mass_abs_error_kg": 0.0012079201133397,
+      "median_final_com_error_m": 0.00012866571462753545
+    },
+    {
+      "morphology": "extended_arm",
+      "trials": 20,
+      "missed_or_premature_events": 0,
+      "median_samples_until_detection": 4.0,
+      "median_final_mass_abs_error_kg": 0.001069845760443222,
+      "median_final_com_error_m": 0.0001410546812154243
+    }
+  ]
+}

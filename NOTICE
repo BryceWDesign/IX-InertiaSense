@@ -1,0 +1,7 @@
+IX-InertiaSense
+Copyright 2026 Bryce Lovell.
+
+This release uses a newly authored core and optional adapters informed by three
+separate user-provided repositories. Source code of those donor repositories is
+not included in this release. See docs/DONOR_AUDIT.md for their licenses and
+reuse boundaries.

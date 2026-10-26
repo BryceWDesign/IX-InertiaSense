@@ -1,0 +1,67 @@
+{
+  "scope": "synthetic_quasistatic_wrist_wrenches_only",
+  "baseline": "weighted ordinary least squares with same measurements",
+  "oracle_provided": "gravity direction, labeled static wrench and calibrated tool tare",
+  "cases": [
+    {
+      "morphology": "compact_arm",
+      "disturbance": "clean",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.00020283094971117535,
+      "ols_median_com_error_m": 0.00020283088476676323,
+      "ix_median_mass_error_kg": 0.0006953813713195256,
+      "ols_median_mass_error_kg": 0.0006953816193826512
+    },
+    {
+      "morphology": "compact_arm",
+      "disturbance": "sensor_noise",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.00045852703693417796,
+      "ols_median_com_error_m": 0.0004585269437824346,
+      "ix_median_mass_error_kg": 0.0018548421865192122,
+      "ols_median_mass_error_kg": 0.0018548424737758196
+    },
+    {
+      "morphology": "compact_arm",
+      "disturbance": "impulsive_outliers",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.0007639960040738321,
+      "ols_median_com_error_m": 0.007666373406540377,
+      "ix_median_mass_error_kg": 0.0023730783120865517,
+      "ols_median_mass_error_kg": 0.020153721480202558
+    },
+    {
+      "morphology": "extended_arm",
+      "disturbance": "clean",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.00022566708136237618,
+      "ols_median_com_error_m": 0.00022566732887000854,
+      "ix_median_mass_error_kg": 0.000959160995202657,
+      "ols_median_mass_error_kg": 0.0009591612933135263
+    },
+    {
+      "morphology": "extended_arm",
+      "disturbance": "sensor_noise",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.00035721015574247307,
+      "ols_median_com_error_m": 0.0003572100095859688,
+      "ix_median_mass_error_kg": 0.001215046589162938,
+      "ols_median_mass_error_kg": 0.001215046525892216
+    },
+    {
+      "morphology": "extended_arm",
+      "disturbance": "impulsive_outliers",
+      "trials": 40,
+      "abstentions": 0,
+      "ix_median_com_error_m": 0.000720541767510171,
+      "ols_median_com_error_m": 0.006310048776946606,
+      "ix_median_mass_error_kg": 0.0029032058476508027,
+      "ols_median_mass_error_kg": 0.01719496297267098
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+name: C++ and Python verification
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: cmake --build build --config Release --parallel 2
+      - name: C++ tests
+        run: ctest --test-dir build -C Release --output-on-failure
+      - name: Python tests
+        run: python -m unittest discover -s tests -p "test_*.py" -v
+      - name: Benchmark Linux
+        if: runner.os == 'Linux'
+        run: python benchmarks/benchmark.py --binary build/inertiasense --repeats 40 --output results/benchmark_ci.json
+      - name: Change benchmark Linux
+        if: runner.os == 'Linux'
+        run: python benchmarks/change_benchmark.py --binary build/inertiasense --repeats 20 --output results/change_benchmark_ci.json
+      - name: Benchmark Windows
+        if: runner.os == 'Windows'
+        run: python benchmarks/benchmark.py --binary build/Release/inertiasense.exe --repeats 8 --output results/benchmark_ci.json
+      - name: Change benchmark Windows
+        if: runner.os == 'Windows'
+        run: python benchmarks/change_benchmark.py --binary build/Release/inertiasense.exe --repeats 5 --output results/change_benchmark_ci.json
